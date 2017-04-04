@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="hagai.edu.moreeventshw.MainActivity">
+
+    <SeekBar
+        android:id="@+id/sbRed"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="0dp"
+        android:max="255"
+        android:progress="128"
+        app:layout_constraintBottom_toBottomOf="@+id/etRed"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/etRed"
+        app:layout_constraintTop_toTopOf="@+id/etRed"
+        app:layout_constraintVertical_bias="0.47" />
+
+    <EditText
+        android:id="@+id/etRed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="8dp"
+        android:ems="3"
+        android:inputType="phone"
+
+        android:text="128"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <SeekBar
+        android:id="@+id/sbGreen"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="0dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginRight="0dp"
+        android:layout_marginTop="0dp"
+        android:max="255"
+        android:progress="128"
+        app:layout_constraintBottom_toBottomOf="@+id/etGreen"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="@+id/sbRed"
+        app:layout_constraintRight_toRightOf="@+id/sbRed"
+        app:layout_constraintTop_toTopOf="@+id/etGreen"
+        app:layout_constraintVertical_bias="0.483" />
+
+    <EditText
+        android:id="@+id/etGreen"
+        android:layout_width="64dp"
+        android:layout_height="49dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginRight="0dp"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:inputType="number"
+        android:text="128"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="@+id/etRed"
+        app:layout_constraintRight_toRightOf="@+id/etRed"
+        app:layout_constraintTop_toBottomOf="@+id/etRed" />
+
+    <SeekBar
+        android:id="@+id/sbBlue"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginRight="0dp"
+        android:layout_marginTop="8dp"
+        android:max="255"
+        android:progress="128"
+        app:layout_constraintBottom_toBottomOf="@+id/etBlue"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="@+id/sbGreen"
+        app:layout_constraintRight_toRightOf="@+id/sbGreen"
+        app:layout_constraintTop_toTopOf="@+id/etBlue"
+        app:layout_constraintVertical_bias="0.444" />
+
+    <EditText
+        android:id="@+id/etBlue"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="0dp"
+        android:layout_marginRight="0dp"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:inputType="phone"
+        android:text="128"
+        app:layout_constraintLeft_toLeftOf="@+id/etGreen"
+        app:layout_constraintRight_toRightOf="@+id/etGreen"
+        app:layout_constraintTop_toBottomOf="@+id/etGreen" />
+
+    <TextView
+        android:background="#808080"
+        android:padding="16dp"
+        android:gravity="center"
+        android:id="@+id/tvResult"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginRight="0dp"
+        android:layout_marginTop="0dp"
+        android:text="#FF808080"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etBlue"
+        app:layout_constraintVertical_bias="1.0" />
+</android.support.constraint.ConstraintLayout>
