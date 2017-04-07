@@ -20,8 +20,7 @@ public class MainActivity extends AppCompatActivity implements SeekBar.OnSeekBar
     private SeekBar sbBlue;
     private EditText etRed, etGreen, etBlue;
 
-    private boolean byUser = true;
-
+    private boolean userIsCurrentlyScrolling = false;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -54,7 +53,7 @@ public class MainActivity extends AppCompatActivity implements SeekBar.OnSeekBar
     public void onProgressChanged(SeekBar seekBar,
                                   int progress,
                                   boolean fromUser) {
-        //tvResult.setTextSize(sbRed.getProgress());
+        this.userIsCurrentlyScrolling = fromUser;
         int rgb = Color.rgb(
                 sbRed.getProgress(),
                 sbGreen.getProgress(),
@@ -63,12 +62,12 @@ public class MainActivity extends AppCompatActivity implements SeekBar.OnSeekBar
 
         tvResult.setBackgroundColor(rgb);
 
-        if (byUser){
+        if (userIsCurrentlyScrolling){
             etGreen.setText(String.valueOf(sbGreen.getProgress()));
-            etBlue.setText(String.valueOf(sbBlue.getProgress()));
-            etRed.setText(String.valueOf(sbRed.getProgress()));
+            etBlue.setText(String.valueOf( sbBlue.getProgress()));
+            etRed.setText(String.valueOf( sbRed.getProgress()));
         }
-
+        this.userIsCurrentlyScrolling = false;
     }
 
     @Override
@@ -92,20 +91,20 @@ public class MainActivity extends AppCompatActivity implements SeekBar.OnSeekBar
             int greenValue = Integer.valueOf(etGreen.getText().toString());
             int blueValue = Integer.valueOf(etBlue.getText().toString());
 
-            byUser = false;
-            sbRed.setProgress(redValue);
-            sbGreen.setProgress(greenValue);
-            sbBlue.setProgress(blueValue);
-            byUser = true;
+            if (!userIsCurrentlyScrolling){
+                sbRed.setProgress(redValue);
+                sbGreen.setProgress(greenValue);
+                sbBlue.setProgress(blueValue);
+            }
 
         } catch (NumberFormatException e) {
             e.printStackTrace();
         }
-
     }
 
     @Override
     public void afterTextChanged(Editable s) {
+
 
     }
 }
